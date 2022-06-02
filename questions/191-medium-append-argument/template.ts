@@ -1,4 +1,4 @@
-type AppendArgument<Fn extends (...args: unknown[]) => unknown, A extends unknown> =
+type AppendArgument<Fn extends (...args: any[]) => unknown, A extends unknown> =
     // 简易式做法
     // 判断参数类型是否存在、判断函数返回值类型是否存在。
     Fn extends (...args: infer K) => infer U ? (...args: [...K, A]) => U : never;
